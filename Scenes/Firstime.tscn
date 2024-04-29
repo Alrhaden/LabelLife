@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://ptjws3kbn4db"]
+
+[ext_resource type="Script" path="res://Scripts/Wfam/Firstime.gd" id="1_55vam"]
+[ext_resource type="Texture2D" uid="uid://bekg2yr7i23rl" path="res://Assets/UI/logo-no-background.png" id="2_jqbxy"]
+
+[node name="Scene_F" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_55vam")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(240, 432)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_jqbxy")
+
+[node name="Welcome_text" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
