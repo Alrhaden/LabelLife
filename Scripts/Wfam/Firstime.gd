@@ -5,20 +5,23 @@ extends Control
 
 func _ready() -> void:
 	var tween = create_tween()
+	welT.add_theme_font_size_override("font_size",30)
 	
-#FirstTime Animation:
-	myTwait($"Logo","modulate", Color("ffffff"),1,3,tween)
+#Animation Logo:
+	tween.tween_property($"Logo","scale",Vector2(.3,.3),.5)
+	tween.parallel()
+	GloabalMethods.myTwait($"Logo","modulate", Color("ffffff"),2,3,tween)
+	tween.chain()
 	tween.tween_property($"Logo","modulate", Color("ffffff00"),1)
 	tween.parallel()
+	tween.tween_property($"Logo","position",Vector2(240,400),1.0)
 	tween.tween_property(Background,"color",Color("110e1a"),1)
 	tween.chain()
-	myTwait(welT,"text","Welcome...",.5,1,tween)
+	
+#First time Animation:
+	GloabalMethods.myTwait(welT,"text","Welcome...",.5,1,tween)
 	tween.tween_property(welT,"text","",.5)
 	tween.tween_property(welT,"text","What's your name?",.5)
 	
 func _process(delta: float) -> void:
 	pass
-
-func myTwait(obj:Object,prop: NodePath,value,speed: float,wait: float,tween: Tween):
-	tween.tween_property(obj,prop,value,speed)
-	tween.tween_property(obj,prop,value,wait)
