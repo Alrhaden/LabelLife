@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0klf61ux7xpw"]
+
+[ext_resource type="Script" path="res://Scripts/Wfam/Grade_Edit_Page.gd" id="1_xwkg2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rynue"]
+bg_color = Color(0.164706, 0.172549, 0.207843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xw0is"]
+bg_color = Color(0.164706, 0.172549, 0.207843, 1)
+
+[node name="Page" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xwkg2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, -50)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_rynue")
+text = "GRADES"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 750)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 78)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xw0is")
+
+[node name="Add_subject" type="Button" parent="VBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 14.5
+offset_right = 454.0
+offset_bottom = 57.5
+text = "Add Subject"
+
+[node name="Gen_ave" type="Label" parent="VBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 24.5
+offset_right = 60.0
+offset_bottom = 47.5
+text = "Genral Average: "
+
+[node name="Grade" type="Label" parent="VBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 25.5
+offset_right = 187.0
+offset_bottom = 48.5
+text = "0"
+
+[connection signal="pressed" from="VBoxContainer/Panel/Add_subject" to="." method="_on_add_subject_pressed"]

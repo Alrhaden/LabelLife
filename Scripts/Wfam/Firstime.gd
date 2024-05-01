@@ -30,7 +30,6 @@ func _ready() -> void:
 	tween.parallel()
 	tween.tween_property($Welcome_text/Button,"visible",true,.1)
 	
-	
 func _on_line_edit_text_changed(_new_text: String) -> void:
 	if $Welcome_text/LineEdit.text.length() >= 3:
 		$Welcome_text/Button.disabled = false
@@ -38,5 +37,29 @@ func _on_line_edit_text_changed(_new_text: String) -> void:
 		$Welcome_text/Button.disabled = true
 
 func _on_button_pressed() -> void:
+	var tween = create_tween()
 	User.perName = $Welcome_text/LineEdit.text
 	GloabalMethods.save_Data(User)
+	$Welcome_text/Button.queue_free()
+	$Welcome_text/LineEdit.queue_free()
+	$Welcome_text/Yes.disabled = false
+	$Welcome_text/Nope.disabled = false
+	tween.tween_property(welT,"text","",.5)
+	GloabalMethods.myTwait(welT,"text","Darkmode? Lovaah?",.5,1,tween)
+	tween.parallel()
+	tween.tween_property($Welcome_text/Yes,"visible",true,.1)
+	tween.parallel()
+	tween.tween_property($Welcome_text/Nope,"visible",true,.1)
+	tween.parallel()
+	tween.tween_property($Welcome_text/Yes,"position",Vector2($Welcome_text/Yes.position.x,$Welcome_text/Yes.position.y-70),1)
+	tween.parallel()
+	tween.tween_property($Welcome_text/Nope,"position",Vector2($Welcome_text/Nope.position.x,$Welcome_text/Nope.position.y-70),1)
+	
+func _on_yes_pressed() -> void:
+	User.darkMode = true
+	GloabalMethods.save_Data(User)
+	get_tree().change_scene_to_file("res://Scenes/Splash.tscn")
+func _on_nope_pressed() -> void:
+	User.darkMode = false
+	GloabalMethods.save_Data(User)
+	get_tree().change_scene_to_file("res://Scenes/Splash.tscn")

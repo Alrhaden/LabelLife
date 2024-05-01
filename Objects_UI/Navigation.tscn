@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=3 uid="uid://v65weumvy6ps"]
+
+[ext_resource type="Script" path="res://Scripts/Wfam/Navigation.gd" id="1_ha11s"]
+[ext_resource type="Texture2D" uid="uid://bekg2yr7i23rl" path="res://Assets/UI/logo-no-background.png" id="2_dqyk0"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_ha11s")
+
+[node name="Backgroud" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.537255, 0.494118, 0.670588, 1)
+
+[node name="Blacked" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_right = -480.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.643137)
+
+[node name="NavButton" type="Button" parent="."]
+offset_left = -16.0
+offset_top = 408.0
+offset_right = 20.0
+offset_bottom = 487.0
+text = ">"
+
+[node name="Navigation" type="Control" parent="."]
+clip_children = 1
+clip_contents = true
+layout_mode = 3
+anchor_right = 0.133333
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_right = -64.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Nav_color" type="ColorRect" parent="Navigation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.370783, 0.300074, 0.478171, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Navigation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Navigation/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="Navigation/MarginContainer/VBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("2_dqyk0")
+expand_mode = 5
+
+[node name="User_Name" type="Label" parent="Navigation/MarginContainer/VBoxContainer3"]
+layout_mode = 2
+horizontal_alignment = 1
+uppercase = true
+
+[node name="dashboard" type="Button" parent="Navigation/MarginContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Dashboard"
+
+[node name="subjects" type="Button" parent="Navigation/MarginContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Subjects"
+
+[node name="notes" type="Button" parent="Navigation/MarginContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Notes
+"
+
+[node name="settings" type="Button" parent="Navigation/MarginContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Settings
+"
+
+[node name="info" type="Button" parent="Navigation/MarginContainer/VBoxContainer3"]
+layout_mode = 2
+text = "Info"
+
+[node name="Label" type="Label" parent="Navigation/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "LABEL LIFE v1.0"
+horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Navigation/MarginContainer/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+color = Color(1, 0.759703, 0.985728, 1)
+
+[connection signal="gui_input" from="Blacked" to="." method="_on_blacked_gui_input"]
+[connection signal="pressed" from="NavButton" to="." method="_on_nav_button_pressed"]

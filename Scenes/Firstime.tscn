@@ -56,5 +56,27 @@ offset_bottom = 151.0
 disabled = true
 text = "Continue"
 
+[node name="Yes" type="Button" parent="Welcome_text"]
+visible = false
+layout_mode = 0
+offset_left = 216.0
+offset_top = 120.0
+offset_right = 271.0
+offset_bottom = 151.0
+disabled = true
+text = "Yeah.."
+
+[node name="Nope" type="Button" parent="Welcome_text"]
+visible = false
+layout_mode = 0
+offset_left = 80.0
+offset_top = 120.0
+offset_right = 139.0
+offset_bottom = 151.0
+disabled = true
+text = "Nope.."
+
 [connection signal="text_changed" from="Welcome_text/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Welcome_text/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Welcome_text/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Welcome_text/Nope" to="." method="_on_nope_pressed"]

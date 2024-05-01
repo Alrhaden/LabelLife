@@ -26,7 +26,6 @@ GloabalMethods="*res://Scripts/Lone/Gloabal_Methods.gd"
 
 window/size/viewport_width=480
 window/size/viewport_height=852
-window/size/mode=3
 window/stretch/mode="canvas_items"
 window/handheld/orientation=1
 

@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8o242k66j3is"]
+
+[ext_resource type="Script" path="res://Scripts/Wfam/box_sub.gd" id="1_26oht"]
+
+[node name="Box_Sub" type="Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(450, 75)
+script = ExtResource("1_26oht")
+
+[node name="Edit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 18.5
+offset_right = 427.0
+offset_bottom = 49.5
+text = "EDIT
+"
+
+[node name="Sub_Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 6.5
+offset_right = 371.0
+offset_bottom = 30.5
+text = "SUBJECT NAME"
+horizontal_alignment = 1
+
+[node name="Grade" type="Label" parent="."]
+layout_mode = 0
+offset_left = 118.0
+offset_top = 36.5
+offset_right = 173.0
+offset_bottom = 60.5
+text = "GRADE:"
+horizontal_alignment = 1
+
+[node name="Unit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 35.5
+offset_right = 286.0
+offset_bottom = 59.5
+text = "UNIT:"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 39.0
+offset_bottom = 76.0
