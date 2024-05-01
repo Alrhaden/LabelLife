@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bww3id6hcywi3"]
+
+[ext_resource type="Script" path="res://Scripts/Wfam/BlackScreen.gd" id="1_iep8g"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_iep8g")
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

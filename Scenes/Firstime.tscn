@@ -34,3 +34,27 @@ offset_right = 416.0
 offset_bottom = 423.0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Welcome_text"]
+visible = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 344.0
+offset_bottom = 95.0
+alignment = 1
+max_length = 15
+caret_blink = true
+
+[node name="Button" type="Button" parent="Welcome_text"]
+visible = false
+layout_mode = 0
+offset_left = 136.0
+offset_top = 120.0
+offset_right = 215.0
+offset_bottom = 151.0
+disabled = true
+text = "Continue"
+
+[connection signal="text_changed" from="Welcome_text/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="Welcome_text/Button" to="." method="_on_button_pressed"]
