@@ -30,8 +30,7 @@ horizontal_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 750)
 layout_mode = 2
-horizontal_scroll_mode = 3
-vertical_scroll_mode = 3
+horizontal_scroll_mode = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
 layout_mode = 2
@@ -71,5 +70,4 @@ offset_right = 187.0
 offset_bottom = 48.5
 text = "0"
 
-[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="pressed" from="VBoxContainer/Panel/Add_subject" to="." method="_on_add_subject_pressed"]

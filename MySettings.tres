@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="User_info" load_steps=2 format=3 uid="uid://bfmojfwj5gy50"]
+[gd_resource type="Resource" script_class="User_info" load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://Scripts/Lone/Global_set.gd" id="1_ucc6g"]
 
@@ -6,9 +6,8 @@
 script = ExtResource("1_ucc6g")
 perName = "Alrhaden"
 darkMode = false
-numSubjects = 0
-subjectCode = []
-subjectName = []
-subjectGrade = []
-subjectUnit = []
-totalAve = 0.0
+numSubjects = 3
+subjectName = ["ppp", "lll", "pkokp"]
+subjectGrade = [3.0, 3.0, 3.0]
+subjectUnit = [2.0, 2.0, 2.0]
+totalAve = 2.5
