@@ -28,11 +28,12 @@ func _on_child_exiting_tree(node: Node) -> void:
 func refresh_data() -> void:
 	User_sub = GloabalMethods.load_Data()
 	var new_sub_count = User_sub.numSubjects
+	if new_sub_count == 0:
+		$No_Subject.visible = true
+	else:
+		$No_Subject.visible = false
 	if new_sub_count > Sub_c:
 		for i in range(Sub_c, new_sub_count):
 			add_subject(User_sub.subjectName[i], User_sub.subjectUnit[i], User_sub.subjectGrade[i], User_sub.id_p[i])
 		Sub_c = new_sub_count
 		$VBoxContainer/Panel/Grade.text = str(User_sub.totalAve)
-	
-func _on_refresh_pressed() -> void:
-	refresh_data()

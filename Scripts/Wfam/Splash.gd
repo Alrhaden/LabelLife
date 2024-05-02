@@ -1,11 +1,12 @@
 extends Control
 
 
-var User = User_info.new()
+var User = User_info
 @onready var tween = create_tween()
 
 func _ready() -> void:
-	User = load("res://MySettings.tres")
+	User = GloabalMethods.load_Data()
+	
 	#Animation Logo
 	if User.darkMode == true:
 		$Background.color = Color("000000")

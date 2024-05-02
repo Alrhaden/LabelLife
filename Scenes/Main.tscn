@@ -10,3 +10,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jmh6y")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 251.0
+offset_top = 790.0
+offset_right = 341.0
+offset_bottom = 833.0
+text = "Refresh"
+
+[connection signal="child_order_changed" from="." to="." method="_on_child_order_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
