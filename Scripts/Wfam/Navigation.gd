@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Node
 
 var User = User_info.new()
 
@@ -7,10 +7,8 @@ func _ready() -> void:
 	$Navigation.visible = false
 	$Blacked.visible = false
 	if User.darkMode == true:
-		$Backgroud.color = Color("110e1a") 
 		$Navigation/Nav_color.color = Color("504365")
 	else:
-		$Backgroud.color = Color("897eab")
 		$Navigation/Nav_color.color = Color("110e1a")
 		
 	$Navigation/MarginContainer/VBoxContainer3/User_Name.text = User.perName

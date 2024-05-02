@@ -19,5 +19,5 @@ func _on_edit_pressed() -> void:
 	instance.name_edit = Subject_Name
 	instance.grade_edit = Subject_Grade
 	instance.unit_edit = Subject_Unit
-	instance.id_edit = s_id - 1
+	instance.id_edit = s_id
 	add_child(instance)

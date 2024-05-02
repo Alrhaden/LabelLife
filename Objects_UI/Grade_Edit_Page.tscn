@@ -55,6 +55,14 @@ offset_right = 454.0
 offset_bottom = 57.5
 text = "Add Subject"
 
+[node name="Refresh" type="Button" parent="VBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 15.5
+offset_right = 343.0
+offset_bottom = 58.5
+text = "Refresh"
+
 [node name="Gen_ave" type="Label" parent="VBoxContainer/Panel"]
 layout_mode = 0
 offset_left = 20.0
@@ -73,3 +81,4 @@ text = "0"
 
 [connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="pressed" from="VBoxContainer/Panel/Add_subject" to="." method="_on_add_subject_pressed"]
+[connection signal="pressed" from="VBoxContainer/Panel/Refresh" to="." method="_on_refresh_pressed"]

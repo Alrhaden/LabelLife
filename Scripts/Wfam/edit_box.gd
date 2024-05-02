@@ -35,3 +35,10 @@ func _on_sub_grade_text_changed(new_text: String) -> void:
 
 func _on_sub_unit_text_changed(new_text: String) -> void:
 	unit_edit = float($Panel/MarginContainer/VBoxContainer/Sub_Unit.text)
+
+
+func _on_delete_pressed() -> void:
+	user_sub = GloabalMethods.load_Data()
+	user_sub.delete_Subject(id_edit)
+	GloabalMethods.save_Data(user_sub)
+	queue_free()

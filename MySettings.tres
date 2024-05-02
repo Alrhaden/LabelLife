@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="User_info" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="User_info" load_steps=2 format=3 uid="uid://c500lqjkjbtj7"]
 
-[ext_resource type="Script" path="res://Scripts/Lone/Global_set.gd" id="1_ucc6g"]
+[ext_resource type="Script" path="res://Scripts/Lone/Global_set.gd" id="1_5bknm"]
 
 [resource]
-script = ExtResource("1_ucc6g")
-perName = "Alrhaden"
+script = ExtResource("1_5bknm")
+perName = "Alrhaden Javier"
 darkMode = false
-numSubjects = 3
-subjectName = ["ppp", "lll", "pkokp"]
-subjectGrade = [3.0, 3.0, 3.0]
-subjectUnit = [2.0, 2.0, 2.0]
-totalAve = 2.5
+numSubjects = 0
+id_p = []
+subjectName = []
+subjectGrade = []
+subjectUnit = [4.0]
+totalAve = 0.0

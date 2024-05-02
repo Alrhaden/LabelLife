@@ -3,16 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/Wfam/Navigation.gd" id="1_ha11s"]
 [ext_resource type="Texture2D" uid="uid://bekg2yr7i23rl" path="res://Assets/UI/logo-no-background.png" id="2_dqyk0"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="Node"]
 script = ExtResource("1_ha11s")
-
-[node name="Backgroud" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.537255, 0.494118, 0.670588, 1)
 
 [node name="Blacked" type="ColorRect" parent="."]
 anchors_preset = 15

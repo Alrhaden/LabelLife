@@ -4,11 +4,11 @@ var user_sub = User_info
 var nam = ""
 var grd = 0.0
 var unt = 0.0
-
+var id = 0
 func _on_confirm_pressed() -> void:
 	user_sub = GloabalMethods.load_Data()
 	if nam.length() > 0 and float(unt) > 0 and float(grd) > 0:
-		user_sub.add_Subject(nam,unt,grd)
+		user_sub.add_Subject(nam,unt,grd,id)
 		GloabalMethods.save_Data(user_sub)
 		queue_free()
 	else:
